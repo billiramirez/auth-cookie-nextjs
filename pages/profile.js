@@ -6,7 +6,11 @@ class Profile extends React.Component {
   };
 
   componentDidMount() {
-    getUserProfile().then((user) => this.setState({ user }));
+    getUserProfile()
+      .then((user) => this.setState({ user }))
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   render() {

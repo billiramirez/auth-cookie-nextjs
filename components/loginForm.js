@@ -5,6 +5,8 @@ class LoginForm extends React.Component {
   state = {
     email: "Sincere@april.biz",
     password: "hildegard.org",
+    error: "",
+    isLoading: false,
   };
 
   handleChange = (e) => {
@@ -15,13 +17,23 @@ class LoginForm extends React.Component {
     const { email, password } = this.state;
 
     e.preventDefault();
-    loginUser(email, password).then(() => {
-      Router.push("/profile");
-    });
+
+    this.setState({ error: "", isLoading: true });
+    loginUser(email, password)
+      .then(() => {
+        Router.push("/profile");
+      })
+      .catch(this.showError);
+  };
+
+  showError = (error) => {
+    console.log(error);
+    const err = (error.response && error.response.data) || error.message;
+    this.setState({ error: err, isLoading: false });
   };
 
   render() {
-    const { email, password } = this.state;
+    const { email, password, error, isLoading } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
@@ -42,7 +54,10 @@ class LoginForm extends React.Component {
             onChange={this.handleChange}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? "Sending" : "Submit"}
+        </button>
+        {error && <div>{error}</div>}
       </form>
     );
   }
