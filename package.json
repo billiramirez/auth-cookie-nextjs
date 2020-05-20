@@ -1,0 +1,22 @@
+{
+  "name": "next-cookie-auth",
+  "version": "1.0.0",
+  "description": "a cookie implementation with nextjs ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "cookie",
+    "auth",
+    "nextjs"
+  ],
+  "author": "Billi Ramirez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "next": "^9.4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
