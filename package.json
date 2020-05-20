@@ -4,7 +4,7 @@
   "description": "a cookie implementation with nextjs ",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [
     "cookie",
@@ -14,8 +14,10 @@
   "author": "Billi Ramirez",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "next": "^9.4.1",
+    "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
