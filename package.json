@@ -2,9 +2,12 @@
   "name": "next-cookie-auth",
   "version": "1.0.0",
   "description": "a cookie implementation with nextjs ",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "build": "next build",
+    "heroku-postbuild": "next build"
   },
   "keywords": [
     "cookie",
